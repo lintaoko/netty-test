@@ -21,6 +21,6 @@ public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObjec
 
 
         //返回客户端
-        ctx.writeAndFlush(content);
+        ctx.writeAndFlush(response);
     }
 }
