@@ -1,4 +1,4 @@
-package Tawn;
+package netty.http;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -10,6 +10,36 @@ import io.netty.util.CharsetUtil;
 import java.net.URI;
 
 public class TestHttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
+
+    @Override
+    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("Channel Registered");
+        super.channelRegistered(ctx);
+    }
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("Channel Active");
+        super.channelActive(ctx);
+    }
+
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("Handle Added");
+        super.handlerAdded(ctx);
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("Channel Inactive");
+        super.channelInactive(ctx);
+    }
+
+    @Override
+    public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("Channel Unregistered");
+        super.channelUnregistered(ctx);
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
